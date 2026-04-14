@@ -1,5 +1,3 @@
-import caperucita.*
-
 object feroz {
   var peso = 10
 
@@ -9,8 +7,8 @@ object feroz {
     return peso.between(20, 150)
   }
 
-  method subir20DePeso() {
-    peso += 20
+  method subirDePeso(cant) {
+    peso += cant
   }
 
   method sufrirCrisis() {
@@ -18,7 +16,10 @@ object feroz {
   }
 
   method comer_(cosa) {
-    peso += cosa.peso() / 10
+    if (!cosa.esDeborada() && cosa.peso() < 90){
+      cosa.esDeborada()
+      peso += cosa.peso() / 10
+    }
   }
 
   method correr() {

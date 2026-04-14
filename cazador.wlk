@@ -1,12 +1,21 @@
 import feroz.*
 
 object cazador {
-  const peso = 90
+  var peso = 90
+  var personaViva = true
 
   method peso() = peso
+  method cambiarPeso(nuevoPeso) {
+    peso = nuevoPeso
+  }
+  method esDeborada() {
+      personaViva = false
+    }
 
   method provocarCrisisAlLobo() {
-    feroz.sufrirCrisis()
+    if (personaViva){
+        feroz.sufrirCrisis()
+  }
   }
 
 }
